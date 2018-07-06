@@ -5,7 +5,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# Font Awesome
+gem "font-awesome-rails"
+# Rails 용 JQuery
+gem 'jquery-rails'
+# 진화한 IRB/rails console
+gem 'pry-rails'
+# 게시판의 form 태그안에 textarea 를 에디터로 바꿔줌
+gem 'tinymce-rails'
+# (Uploader)form 에서 input type=file 을 업로드 가능케 해줌 
+gem 'carrierwave'
+# 이미지 프로세싱(resize, thumbnail 제작)
+gem 'mini_magick'
+# Bootstrap v4
+gem 'bootstrap', '~> 4.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
@@ -27,8 +40,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -48,6 +62,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails_db'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
