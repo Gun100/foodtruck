@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :truck_name %>
+    <%= form.text_field :truck_name, id: :truck_truck_name %>
+  </div>
+
+  <div class="field">
+    <%#= form.label :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

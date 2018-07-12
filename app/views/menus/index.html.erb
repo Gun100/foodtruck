@@ -1,0 +1,16 @@
+<h1>메뉴등록</h1>    
+<%= form_for [@truck, @menu] do |m| %>
+<%#= form_for @menu, url: truck_menus_path(@truck) do |m| %>
+    <%= m.label '메뉴' %>
+    <%= m.text_field :menu_name %>
+    
+    <%= m.label '가격' %>
+    <%= m.text_field :price %>
+    <%#= m.hidden_field :truck_id, value:@truck %>
+    <%= m.submit %>
+<% end %>
+
+<% @menus.each do |m| %>
+    <%= m.menu_name %> 
+    <%= m.price %> 
+<% end %>

@@ -9,7 +9,11 @@ class TrucksController < ApplicationController
 
   # GET /trucks/1
   # GET /trucks/1.json
+ 
   def show
+    @reviews = @truck.reviews
+    @review = Review.new
+    @menus = @truck.menus
   end
 
   # GET /trucks/new
@@ -69,6 +73,6 @@ class TrucksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def truck_params
-      params.fetch(:truck, {})
+      params.require(:truck).permit(:truck_name, :user_id)
     end
 end

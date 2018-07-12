@@ -1,4 +1,28 @@
 <p id="notice"><%= notice %></p>
+<strong>Truck name:</strong>
+  <%= @truck.truck_name %>
+</p>
+<% @menus.each do |m| %>
+<div><%= m.menu_name %><%= m.price %></div>
+<% end %> 
+<%= link_to '메뉴등록', truck_menus_path(@truck) %>
+<p>
+  
+
 
 <%= link_to 'Edit', edit_truck_path(@truck) %> |
 <%= link_to 'Back', trucks_path %>
+
+
+<%= form_for @review do |r| %>
+<%= r.label 'review' %>
+<%= r.text_field :content %>
+<%= r.hidden_field :truck_id, value: @truck.id %>
+<%= r.hidden_field :user_id, value: current_user.id %>
+
+<%= r.submit %>
+<% end %>
+    
+<% @reviews.each do |r| %>
+<div><%= r.content  %><%#= link_to '수정',review_path(r.id) %><%= link_to "  |삭제",review_path(r.id), method: :delete %></div>
+<% end %> 

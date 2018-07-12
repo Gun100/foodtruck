@@ -17,7 +17,7 @@ class TrucksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create truck" do
     assert_difference('Truck.count') do
-      post trucks_url, params: { truck: {  } }
+      post trucks_url, params: { truck: { truck_name: @truck.truck_name, user_id: @truck.user_id } }
     end
 
     assert_redirected_to truck_url(Truck.last)
@@ -34,7 +34,7 @@ class TrucksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update truck" do
-    patch truck_url(@truck), params: { truck: {  } }
+    patch truck_url(@truck), params: { truck: { truck_name: @truck.truck_name, user_id: @truck.user_id } }
     assert_redirected_to truck_url(@truck)
   end
 
